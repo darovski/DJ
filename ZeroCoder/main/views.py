@@ -1,13 +1,14 @@
+from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("<h1>Это главная страница проекта</h1>")
+    return render(request, 'main/index.html', {'caption':"Django"})
 
 def new(request):
-    return HttpResponse("<h1>Это вторая страница проекта</h1>")
+    return render(request, 'main/new.html', {'caption': "Django"})
 
 def data(request):
-    return HttpResponse("<h1>Это еще одна страница проекта</h1>")
+    return render(request, 'main/page3.html', {'caption': "Django"})
 
 def test(request):
-    return HttpResponse("<h1>не думал, что дойдете до этой страницы</h1>")
+    return render(request, 'main/page4.html', {'caption': "Django"})
